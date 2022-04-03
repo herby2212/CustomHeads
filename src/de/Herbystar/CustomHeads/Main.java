@@ -91,7 +91,7 @@ public class Main extends JavaPlugin implements Listener {
 	}
 	*/
 	
-	public void addToBannerList(Player player, ArrayList<Player> toAddTo, int poolId) {
+	public void addToHeadList(Player player, ArrayList<Player> toAddTo, int poolId) {
 		List<ArrayList<Player>> l = null;
 		if(poolId == 1) {
 			l = pageOnePool;
