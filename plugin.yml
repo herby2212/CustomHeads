@@ -1,6 +1,7 @@
 name: CustomHeads
 main: de.Herbystar.CustomHeads.Main
-version: 2.3-SNAPSHOT
+version: 2.4-SNAPSHOT
+api-version: 1.13
 author: Herbystar
 description: Head Plugin with other Heads
 commands:

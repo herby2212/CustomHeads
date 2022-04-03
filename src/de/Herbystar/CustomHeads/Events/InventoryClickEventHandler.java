@@ -1,11 +1,11 @@
 package de.Herbystar.CustomHeads.Events;
 
-import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 import de.Herbystar.CustomHeads.Main;
+import de.Herbystar.CustomHeads.Utilities.XMaterial;
 
 public class InventoryClickEventHandler implements Listener {
 
@@ -18,7 +18,7 @@ public class InventoryClickEventHandler implements Listener {
 	public void onAntiJoinItemMoveEvent(InventoryClickEvent e) {
 		if(plugin.getConfig().getBoolean("CustomHeads.JoinItem.AntiMove") == true) {
 			if(e.getCurrentItem() != null) {
-				if(e.getCurrentItem().getType().equals(Material.SKULL_ITEM)) {
+				if(e.getCurrentItem().getType().equals(XMaterial.PLAYER_HEAD.parseMaterial())) {
 					if(e.getCurrentItem().hasItemMeta() && e.getCurrentItem().getItemMeta().getDisplayName().equals(plugin.getConfig().getString("CustomHeads.JoinItem.Name").replace("&", "§").replace("Oe", "Ö").replace("oe", "ö").replace("Ue", "Ü").replace("Ae", "Ä").replace("ae", "ä"))) {
 						e.setCancelled(true);
 					}

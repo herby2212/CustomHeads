@@ -1,7 +1,8 @@
 package de.Herbystar.CustomHeads;
 
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -26,6 +27,8 @@ public class Main extends JavaPlugin implements Listener {
 	public Inventory inv = null;
 	public Inventory inv2 = null;
 	
+	public static Main instance;
+	
 	public ArrayList<Player> H1 = new ArrayList<Player>();
 	public ArrayList<Player> H2 = new ArrayList<Player>();
 	public ArrayList<Player> H3 = new ArrayList<Player>();
@@ -40,6 +43,9 @@ public class Main extends JavaPlugin implements Listener {
 	public ArrayList<Player> H12 = new ArrayList<Player>();
 	public ArrayList<Player> H13 = new ArrayList<Player>();
 	public ArrayList<Player> H14 = new ArrayList<Player>();
+	
+	List<ArrayList<Player>> pageOnePool = Arrays.asList(
+			H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, H12, H13, H14);
 	
 	public ArrayList<Player> HP1 = new ArrayList<Player>();
 	public ArrayList<Player> HP2 = new ArrayList<Player>();
@@ -56,19 +62,23 @@ public class Main extends JavaPlugin implements Listener {
 	public ArrayList<Player> HP13 = new ArrayList<Player>();
 	public ArrayList<Player> HP14 = new ArrayList<Player>();
 	
+	List<ArrayList<Player>> pageTwoPool = Arrays.asList(
+			HP1, HP2, HP3, HP4, HP5, HP6, HP7, HP8, HP9, HP10, HP11, HP12, HP13, HP14);
+	
 	public boolean UpdateAviable;
 				
 	public void onEnable() {
+		instance = this;
 		getCommands();
 		loadConfig();
 		registerEvents();
-		StartMetrics();
 		
 		Server server = Bukkit.getServer();
 	    ConsoleCommandSender console = server.getConsoleSender();
 	    console.sendMessage("§4[§aCustomHeads§4] " + ChatColor.AQUA + "Version: " + getDescription().getVersion() + " §aby " + "§c" + getDescription().getAuthors() + ChatColor.GREEN + " enabled!");
 	}
 	
+	/*
 	private void StartMetrics() {
 		try {
 			Metrics m = new Metrics(this);
@@ -78,6 +88,35 @@ public class Main extends JavaPlugin implements Listener {
 			e.printStackTrace();
 			Bukkit.getConsoleSender().sendMessage("§4[§aCustomHeads§4] §cFailed to start the §eMetrics§c!");
 		}
+	}
+	*/
+	
+	public void addToBannerList(Player player, ArrayList<Player> toAddTo, int poolId) {
+		List<ArrayList<Player>> l = null;
+		if(poolId == 1) {
+			l = pageOnePool;
+		} else if(poolId == 2) {
+			l = pageTwoPool;		
+		}
+		for(ArrayList<Player> lPlayer : l) {
+			if(lPlayer == toAddTo) {
+				lPlayer.add(player);
+			} else {
+				lPlayer.remove(player);
+			}
+		}
+	}
+	
+	public String replaceString(String string) {
+		string = string.replace("&", "§");
+		string = string.replace("#", "'");
+		string = string.replace("Oe", "Ö");
+		string = string.replace("oe", "ö");
+		string = string.replace("Ue", "Ü");
+		string = string.replace("Ae", "Ä");
+		string = string.replace("ae", "ä");
+		return string;
+		
 	}
 	
 	private void registerEvents() {
