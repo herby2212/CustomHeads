@@ -1,0 +1,200 @@
+#Config of the plugin use Oe,Ue,Ae for umlauts! Do not change the main Structure of the config or you get a error message on server start!
+CustomHeads:
+  AutoUpdater: true
+  JoinItem:
+    Slot(0-8): 4
+    GiveOnJoin: true
+    AntiMove: true
+    AntiDrop: true
+    Name: '&aCustomHeads Selector'
+    Lore: '&7&oRight-Click to open'
+  ClearHeadOnLeave: true
+  CustomPrefix: '&4[&aCustomHeads&4] '
+  HeadsInventory:
+    Side1Title: '&a&lFirst Side of Heads'
+    Side2Title: '&a&lSecond Side of Heads'
+  Messages:
+    HeadSelectMessage:
+    #[ITEM] is a variable for the Name of the clicked head! For example: ClickedHead = CaptainSparklez's head that means [ITEM] = CaptainSparklez's Head! Only work in this part!
+      MessageNewHead: '&aYou have the [ITEM]&a equipped!'
+      MessageTheSameHead: '&aYou have already the [ITEM]&a equipped!'
+    HeadClearMessage:
+      Message: '&cYou no longer have a head on your head!'
+      NoHeadMessage: '&cYou do not have a head on your head!'
+    NoPermMessage: '&cYou do not have the right permission!'
+  HeadOwners:
+    1: 'SturmwaffelHD'
+    2: 'Paluten'
+    3: 'HerrBergmann'
+    4: 'GermanletsPlay'
+    5: 'Ungespielt'
+    6: 'herby2212'
+    7: 'DnerTV'
+    8: 'SkythekidRS'
+    9: 'Honeydew'
+    10: 'BajanCanadian'
+    11: 'DanTDM'
+    12: 'CaptainSparklez'
+    13: 'Slamacow'
+    14: 'Spongebob'
+    #Inventory side 2
+    15: '/'
+    16: '/'
+    17: '/'
+    18: '/'
+    19: '/'
+    20: 'MHF_Exclamation'
+    21: '/'
+    22: '/'
+    23: '/'
+    24: '/'
+    25: '/'
+    26: '/'
+    27: '/'
+    28: '/'
+  HeadDisplayNames:
+    #Use "#" for "'"!
+    #Inventory side 1
+    1: '&eSturmwaffelHD#s &bHead'
+    2: '&ePaluten#s &bHead'
+    3: '&eHerrBergmann#s &bHead'
+    4: '&eGermanletsPlay#s &bHead'
+    5: '&eUngespielt#s &bHead'
+    6: '&eherby2212#s &bHead'
+    7: '&eDnerTV#s &bHead'
+    8: '&eSky Does Minecraft#s &bHead'
+    9: '&eYogcast#s &bHead'
+    10: '&eBajanCanadian#s &bHead'
+    11: '&eTheDiamondMinecart#s &bHead'
+    12: '&eCaptainSparklez#s &bHead'
+    13: '&eSlamacow#s &bHead'
+    14: '&eSpongebob#s &bHead'
+    #Inventory side 2
+    15: ''
+    16: ''
+    17: ''
+    18: ''
+    19: ''
+    20: '&eAll Heads in the Config!'
+    21: ''
+    22: ''
+    23: ''
+    24: ''
+    25: ''
+    26: ''
+    27: ''
+    28: ''
+  HeadLores:
+    #Inventory side 1
+    1: ''
+    2: ''
+    3: ''
+    4: ''
+    5: ''
+    6: '&7&oDeveloper + YT: Herbystar'
+    7: ''
+    8: ''
+    9: ''
+    10: ''
+    11: ''
+    12: ''
+    13: ''
+    14: ''
+    #Inventory side 2
+    15: ''
+    16: ''
+    17: ''
+    18: ''
+    19: ''
+    20: '&7&oYou can enable every Head in the config!'
+    21: ''
+    22: ''
+    23: ''
+    24: ''
+    25: ''
+    26: ''
+    27: ''
+    28: ''     
+    #Inventory side 1
+    1: false
+    2: false
+    3: false
+    4: false
+    5: false
+    6: false
+    7: false
+    8: false
+    9: false
+    10: false
+    11: false
+    12: false
+    13: false
+    14: false
+    #Inventory side 2
+    15: true
+    16: true
+    17: true
+    18: true
+    19: true
+    20: true
+    21: true
+    22: true
+    23: true
+    24: true
+    25: true
+    26: true
+    27: true
+    28: true
+    CloseItem: false
+    ClearHeadItem: false
+    NextSide: false
+    BackSide: false
+  Slot:
+    #Inventory side 1
+    1: 10
+    2: 11
+    3: 12
+    4: 13
+    5: 14
+    6: 15
+    7: 16
+    8: 19
+    9: 20
+    10: 21
+    11: 22
+    12: 23
+    13: 24
+    14: 25
+    #Inventory side 2
+    15: 10
+    16: 11
+    17: 12
+    18: 13
+    19: 14
+    20: 15
+    21: 16
+    22: 19
+    23: 20
+    24: 21
+    25: 22
+    26: 23
+    27: 24
+    28: 25
+    Inventory1:
+      CloseItem: 34
+      ClearHeadItem: 33
+      NextSide: 35
+      BackSide: 27
+    Inventory2:
+      CloseItem: 35
+      ClearHeadItem: 34
+      NextSide: 35
+      BackSide: 27
+  Inv1Size: 36
+  Inv2Size: 36
+  GUI:
+    CloseItemName: '&aClose'
+    ClearHeadItemName: '&cClear &aHead'
+    NextSide: '&c&oNext Side ->'
+    BackSide: '&e&o<- Back'
+  

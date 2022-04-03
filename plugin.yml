@@ -1,0 +1,52 @@
+name: CustomHeads
+main: de.Herbystar.CustomHeads.Main
+version: 2.4
+api-version: 1.13
+author: Herbystar
+description: Head Plugin with other Heads
+commands:
+  CH:
+    usage: /CH
+    description: Main command!
+permissions:
+  CustomHeads.Reload:
+    description: Allows you to reload the configuration!
+  CustomHeads.Cmd:
+    description: Allow the use of some commands!
+  CustomHeads.Heads.*:
+    description: Allows to select every head!
+    children:
+      CustomHeads.Head.1: true
+      CustomHeads.Head.2: true
+      CustomHeads.Head.3: true
+      CustomHeads.Head.4: true
+      CustomHeads.Head.5: true
+      CustomHeads.Head.6: true
+      CustomHeads.Head.7: true
+      CustomHeads.Head.8: true
+      CustomHeads.Head.9: true
+      CustomHeads.Head.10: true
+      CustomHeads.Head.11: true
+      CustomHeads.Head.12: true
+      CustomHeads.Head.13: true
+      CustomHeads.Head.14: true 
+      CustomHeads.Head.15: true
+      CustomHeads.Head.16: true
+      CustomHeads.Head.17: true
+      CustomHeads.Head.18: true
+      CustomHeads.Head.19: true
+      CustomHeads.Head.20: true
+      CustomHeads.Head.21: true
+      CustomHeads.Head.22: true
+      CustomHeads.Head.23: true
+      CustomHeads.Head.24: true
+      CustomHeads.Head.25: true
+      CustomHeads.Head.26: true
+      CustomHeads.Head.27: true
+      CustomHeads.Head.28: true
+  CustomHeads.Item.*:
+    description: Erlaubt dir kompletten Zugriff auf das Plugin!
+    children:
+      CustomHeads.Item.Join: true
+      CustomHeads.Item.Open: true
+      CustomHeads.Item.Cmd: true
