@@ -22,11 +22,13 @@ public class ItemHandler {
 		public String id;
 		
 		public Head(String id, String displayName, String lore, String ownerName) {
-			this.id = id;
 			this.item = createHead(displayName, lore, ownerName);
 			this.displayName = this.item.getItemMeta().getDisplayName();
 			
-			headCollection.add(this);
+			if(id != null) {
+				this.id = id;
+				headCollection.add(this);
+			}
 		}
 		
 		public static Head getHeadById(String id) {
@@ -84,7 +86,9 @@ public class ItemHandler {
 	    	hm.setOwner(ownerName);
 	    }
 	    hm.setDisplayName(Main.instance.replaceString(Main.instance.getConfig().getString("CustomHeads.JoinItem.Name")));
-	    hm.setLore(Arrays.asList(Main.instance.replaceString(Main.instance.getConfig().getString(lore))));
+	    if(lore != null) {
+		    hm.setLore(Arrays.asList(Main.instance.replaceString(Main.instance.getConfig().getString(lore))));
+	    }
 	    h.setItemMeta(hm);
 	    
 	    return h;
