@@ -1,5 +1,7 @@
 package de.Herbystar.CustomHeads;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,6 +21,7 @@ import de.Herbystar.CustomHeads.Events.PlayerDropItemEventHandler;
 import de.Herbystar.CustomHeads.Events.PlayerInteractEventHandler;
 import de.Herbystar.CustomHeads.Events.PlayerJoinEventHandler;
 import de.Herbystar.CustomHeads.Events.PlayerQuitEventHandler;
+import de.Herbystar.CustomHeads.Utilities.ItemHandler;
 
 
 public class Main extends JavaPlugin implements Listener {
@@ -75,6 +78,12 @@ public class Main extends JavaPlugin implements Listener {
 		
 		Server server = Bukkit.getServer();
 	    ConsoleCommandSender console = server.getConsoleSender();
+	    console.sendMessage("§4[§aCustomHeads§4] §eCreating Inventories...");
+	    Instant beforeInventoryCreation = Instant.now();
+	    createInventories();
+	    Instant afterInventoryCreation = Instant.now();
+	    Duration timeElapsed = Duration.between(beforeInventoryCreation, afterInventoryCreation);
+	    console.sendMessage("§4[§aCustomHeads§4] §eInventories created (took " + timeElapsed.toString().replace("PT", "").replace("S", "s") + ").");
 	    console.sendMessage("§4[§aCustomHeads§4] " + ChatColor.AQUA + "Version: " + getDescription().getVersion() + " §aby " + "§c" + getDescription().getAuthors() + ChatColor.GREEN + " enabled!");
 	}
 	
@@ -90,6 +99,11 @@ public class Main extends JavaPlugin implements Listener {
 		}
 	}
 	*/
+	
+	private void createInventories() {
+		ItemHandler.getInventoryPageOne();
+		ItemHandler.getInventoryPageTwo();
+	}
 	
 	public void addToHeadList(Player player, ArrayList<Player> toAddTo, int poolId) {
 		List<ArrayList<Player>> l = null;

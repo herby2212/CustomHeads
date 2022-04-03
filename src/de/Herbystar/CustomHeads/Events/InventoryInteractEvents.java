@@ -30,7 +30,7 @@ public class InventoryInteractEvents implements Listener {
 		
 		if(getInventoryName(e).equals(plugin.getConfig().getString("CustomHeads.HeadsInventory.Side1Title").replace("&", "§").replace("Oe", "Ö").replace("oe", "ö").replace("Ue", "Ü").replace("Ae", "Ä").replace("ae", "ä"))) {
 			e.setCancelled(true);
-			if(e.getCurrentItem().hasItemMeta()) {
+			if(e.getCurrentItem() != null && e.getCurrentItem().hasItemMeta()) {
 				if(e.getCurrentItem().getType().equals(XMaterial.PLAYER_HEAD.parseMaterial())) {
 					if((e.getCurrentItem().getItemMeta().getDisplayName().equals(plugin.getConfig().getString("CustomHeads.HeadDisplayNames.1").replace("&", "§").replace("#", "'")))) {
 						if(p.hasPermission("CustomHeads.Head.1") | p.isOp()) {
@@ -264,7 +264,7 @@ public class InventoryInteractEvents implements Listener {
 					
 		if(getInventoryName(e).equals(plugin.getConfig().getString("CustomHeads.HeadsInventory.Side2Title").replace("&", "§").replace("Oe", "Ö").replace("oe", "ö").replace("Ue", "Ü").replace("Ae", "Ä").replace("ae", "ä"))) {
 			e.setCancelled(true);
-			if(e.getCurrentItem().hasItemMeta()) {
+			if(e.getCurrentItem() != null && e.getCurrentItem().hasItemMeta()) {
 				if(e.getCurrentItem().getType().equals(XMaterial.PLAYER_HEAD.parseMaterial())) {
 					if((e.getCurrentItem().getItemMeta().getDisplayName().equals(plugin.getConfig().getString("CustomHeads.HeadDisplayNames.15").replace("&", "§").replace("#", "'")))) {
 						if(p.hasPermission("CustomHeads.Head.15") | p.isOp()) {

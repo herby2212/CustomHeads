@@ -85,9 +85,9 @@ public class ItemHandler {
 	    } catch(NoSuchMethodError ex) {
 	    	hm.setOwner(ownerName);
 	    }
-	    hm.setDisplayName(Main.instance.replaceString(Main.instance.getConfig().getString("CustomHeads.JoinItem.Name")));
+	    hm.setDisplayName(Main.instance.replaceString(displayName));
 	    if(lore != null) {
-		    hm.setLore(Arrays.asList(Main.instance.replaceString(Main.instance.getConfig().getString(lore))));
+		    hm.setLore(Arrays.asList(Main.instance.replaceString(lore)));
 	    }
 	    h.setItemMeta(hm);
 	    
